@@ -1,0 +1,39 @@
+<h2> Employee List </h2>
+<table class=" table table-primary table-striped" style="border-radius: 25px">
+  <thead class="table-dark">
+  <tr>
+    <th> First Name </th>
+    <th> Last Name </th>
+    <th> Email </th>
+    <th> Level </th>
+    <th> CompanyRes </th>
+    <th> Assignment </th>
+    <th> Management </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor = "let employee of employees">
+    <td> {{employee.firstName}}</td>
+    <td> {{employee.lastName}}</td>
+    <td> {{employee.email}}</td>
+    <td> {{employee.level}}</td>
+    <td> {{employee.companyResidence}}</td>
+    <td> {{employee.assignment}}</td>
+    <td>
+
+      <button (click)="saveEmployee()" class=" btn btn-outline-primary material-icons " style="">person_add</button>
+      <button (click)="updateEmployee(employee.id)" class=" btn btn-outline-secondary material-icons" style="margin-left: 10px">edit</button>
+      <button (click)="deleteEmployee(employee.id)" class=" btn btn-outline-danger material-icons" style="margin-left: 10px" >delete_forever</button>
+    </td>
+  </tr>
+  </tbody>
+
+
+
+
+  <div id="liveAlertPlaceholder"></div>
+  <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+
+</table>
+
+

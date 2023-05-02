@@ -1,0 +1,32 @@
+<h2> Certification List </h2>
+<table class=" table table-primary table-striped" style="border-radius: 25px">
+    <thead class="table-dark">
+    <tr>
+        <th> id </th>
+        <th> Certification Name </th>
+        <th> Type </th>
+        <th> Scope </th>
+        <th> Duration</th>
+        <th> Assignment </th>
+        <th> Status </th>
+        <th> Management </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let certification of certifications">
+        <td> {{certification.certificationId}}</td>
+        <td> {{certification.certificationName}}</td>
+        <td> {{certification.type}}</td>
+        <td> {{certification.scope}}</td>
+        <td> {{certification.duration}}</td>
+        <td> {{certification.assignment}}</td>
+        <td> {{certification.status}}</td>
+        <td>
+            <button (click)="saveCertification()" class=" btn btn-outline-primary material-icons " style="">person_add</button>
+            <button (click)="updateCertification(certification.certificationId)" class=" btn btn-outline-secondary material-icons" style="margin-left: 10px">edit</button>
+            <button (click)="deleteCertification(certification.certificationId)" class=" btn btn-outline-danger material-icons" style="margin-left: 10px" >delete_forever</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
